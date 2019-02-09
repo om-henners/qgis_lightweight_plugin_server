@@ -8,7 +8,7 @@ from . import db
 
 class RolesUsers(db.Model):
     """
-
+    Mapping between roles and users
     """
     __tablename__ = 'roles_users'
     id = db.Column(db.Integer(), primary_key=True)
@@ -42,11 +42,11 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
 
     # Modifyable user properties
-    email = db.Column(db.String, unique=True, nullable=False)
-    screen_name = db.Column(db.String, unique=True, nullable=False)
-    full_name = db.Column(db.String, nullable=False)
-    preferred_address = db.Column(db.String)
-    password = db.Column(db.String)
+    email = db.Column(db.Unicode, unique=True, nullable=False)
+    screen_name = db.Column(db.Unicode, unique=True, nullable=False)
+    full_name = db.Column(db.Unicode, nullable=False)
+    preferred_address = db.Column(db.Unicode)
+    password = db.Column(db.Unicode)
 
     # user metadata
     last_login_at = db.Column(db.DateTime)
