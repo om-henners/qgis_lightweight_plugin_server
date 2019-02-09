@@ -1,0 +1,12 @@
+blinker
+environs
+Flask
+Flask-Bcrypt
+Flask-Bootstrap
+Flask-DebugToolbar
+Flask-Security
+Flask-Migrate
+Flask-SQLAlchemy
+Flask-Testing
+Flask-WTF
+psycopg2-binary
