@@ -86,7 +86,9 @@ class PluginVersion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
     # link to parent
-    plugin = db.Column(db.Integer, db.ForeignKey('plugin.id'), nullable=False)
+    plugin_id = db.Column(db.Integer, db.ForeignKey('plugin.id'), nullable=False)
+    plugin = db.relationship(Plugin, backref=db.backref('plugin_versions'))
+
     # dates
     created_on = db.Column(db.DateTime, default=datetime.utcnow)
     # download counter
@@ -108,3 +110,7 @@ class PluginVersion(db.Model):
     experimental = db.Column(db.Boolean, default=False, index=True, nullable=False)
     approved = db.Column(db.Boolean, default=True, index=True, nullable=False)
     external_deps = db.Column(db.String(512), nullable=True)
+
+
+    def __repr__(self):
+        return f'<PluginVersion "{self.plugin.name}" "{self.version}">'
