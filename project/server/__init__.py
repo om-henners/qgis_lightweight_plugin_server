@@ -43,6 +43,11 @@ def create_app(script_info=None):
     db.init_app(app)
     migrate.init_app(app, db)
 
+    # set up custom type url converters
+    from project.server.plugins.converters import VersionConverter
+
+    app.url_map.converters['version'] = VersionConverter
+
     # register blueprints
     from project.server.user.views import user_blueprint
     from project.server.plugins.views import plugin_blueprint

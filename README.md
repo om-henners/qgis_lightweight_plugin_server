@@ -16,7 +16,7 @@ flask run
 ```
 
 In QGIS open the Manage Plugins menu item. Select settings, then add a new
-server: http://localhost:5000/plugins.xml
+server: http://localhost:5000/plugins/plugins.xml
 
 In your browser open http://localhost:5000 to check out the web interface.
 
