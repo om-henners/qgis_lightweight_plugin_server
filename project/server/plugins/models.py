@@ -49,9 +49,9 @@ class Plugin(db.Model):
     tracker = db.Column(URLType)
 
     owners = db.relationship(
-        'Role',
+        'User',
         secondary='plugins_owners',
-        backref=db.backref('plugins', lazy='dynamic')
+        backref=db.backref('owned_plugins', lazy='dynamic')
     )
 
     # name, desc etc.
