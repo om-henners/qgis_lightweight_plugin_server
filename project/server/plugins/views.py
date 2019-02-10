@@ -124,13 +124,13 @@ def stable_plugins():
 
 #     url(r'^experimental/$', PluginsList.as_view(queryset=Plugin.experimental_objects.all(), additional_context={'title' : _('Experimental plugins')}), name='experimental_plugins'),
 @plugin_blueprint.route('/experimental')
-def my_plugins():
+def experimental_plugins():
     pass
 
 
 #     url(r'^popular/$', PluginsList.as_view(queryset=Plugin.popular_objects.all(), additional_context={'title' : _('Popular plugins')}), name='popular_plugins'),
 @plugin_blueprint.route('/my')
-def my_plugins():
+def popular_plugins():
     pass
 
 
@@ -141,14 +141,8 @@ def most_voted_plugins():
 
 
 #     url(r'^most_downloaded/$', PluginsList.as_view(queryset=Plugin.most_downloaded_objects.all(), additional_context={'title' : _('Most downloaded plugins')}), name='most_downloaded_plugins'),
-@plugin_blueprint.route('/most_voted')
-def most_voted_plugins():
-    pass
-
-
-#     url(r'^most_voted/$', PluginsList.as_view(queryset=Plugin.most_voted_objects.all(), additional_context={'title' : _('Most voted plugins')}), name='most_voted_plugins'),
-@plugin_blueprint.route('/most_voted')
-def most_voted_plugins():
+@plugin_blueprint.route('/most_downloaded')
+def most_downloaded_plugins():
     pass
 
 
