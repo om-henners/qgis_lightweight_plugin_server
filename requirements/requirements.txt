@@ -9,5 +9,6 @@ Flask-Migrate
 Flask-SQLAlchemy
 Flask-Testing
 Flask-WTF
+geoalchemy2
 psycopg2-binary
 sqlalchemy-utils

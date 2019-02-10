@@ -2,6 +2,7 @@
 User models based on standard models from Flask Security
 """
 from flask_security import UserMixin, RoleMixin
+from geoalchemy2 import Geography
 
 from . import db
 
@@ -47,6 +48,9 @@ class User(db.Model, UserMixin):
     full_name = db.Column(db.Unicode, nullable=False)
     preferred_address = db.Column(db.Unicode)
     password = db.Column(db.Unicode)
+
+    # location
+    geog = db.Column(Geography(geometry_type='POINT', srid=4326, spatial_index=True), nullable=True, index=True)
 
     # user metadata
     last_login_at = db.Column(db.DateTime)
